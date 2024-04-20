@@ -1,43 +1,41 @@
 :root {
   --font-main: rgb(211, 211, 211);
-}
-h1 {
-  color: white;
-  font-size: 2em;
-}
-h2 {
-  color: white;
-  font-size: 4em;
-  text-transform: uppercase;
-}
-h3 {
-  color: var(--font-main);
-  font-size: 2em;
-  text-transform: uppercase;
-}
-body {
-  background-image: url(/assets/fondo.webp);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
+h1,
+h2,
+h3 {
+  color: var(--font-main);
+  text-transform: uppercase;
+}
+body {
+  overflow-x: hidden;
+  background-color: black;
+}
 header {
+  position: absolute;
   height: 10dvh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.342);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 21%,
+    rgb(0, 0, 0) 74%,
+    rgba(0, 0, 0, 0) 100%
+  );
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  backdrop-filter: blur(10px);
+  justify-content: center;
 }
 header > div {
   width: 50vw;
   height: 100%;
+  font-size: 2.5em; /* Todo */
   display: flex;
   align-items: center;
-}
-header > div > img {
-  filter: invert();
-  height: 80%;
+  text-align: center;
+  justify-content: center;
 }
 header > ul {
   width: 50vw;
@@ -53,13 +51,16 @@ header > ul > li > a {
   font-weight: bold;
   color: var(--font-main);
 }
-main {
+.links-twitter-container {
+  padding-top: 10dvh;
+  width: 100vw;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
-  margin-top: 10dvh;
-  margin-left: 2vw;
+  background-image: url(/assets/fondo.webp);
 }
 .link-container {
+  margin-top: 10dvh;
   position: relative;
   padding: 50px;
   width: 50vw;
@@ -107,6 +108,15 @@ main {
   border-radius: 10px;
   padding-left: 10px;
 }
+.twitter {
+  margin-top: 10dvh;
+  position: relative;
+  width: 30vw;
+  height: 70dvh;
+  background-color: black;
+  color: var(--font-main);
+  overflow: scroll;
+}
 .twitter-tittle {
   height: 10%;
   width: 100%;
@@ -117,14 +127,7 @@ main {
 .twitter-tittle img {
   height: 100%;
 }
-.twitter {
-  position: relative;
-  width: 30vw;
-  height: 70dvh;
-  background-color: black;
-  color: var(--font-main);
-  overflow: scroll;
-}
+
 .tweets p {
   color: white;
   margin: 10%;
@@ -134,4 +137,9 @@ main {
   content: '"';
   font-size: 2em;
   font-family: "Times New Roman", Times, serif;
+}
+.redes {
+  background-color: black;
+  height: 50dvh;
+  width: 100vw;
 }
