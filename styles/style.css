@@ -1,11 +1,13 @@
 :root {
   --font-main: rgb(211, 211, 211);
+  --background-color: rgb(22, 22, 22);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
 h1,
 h2,
 h3 {
+  cursor: default;
   color: var(--font-main);
   text-transform: uppercase;
 }
@@ -58,6 +60,9 @@ header > ul > li > a {
   flex-flow: row wrap;
   justify-content: space-around;
   background-image: url(/assets/fondo.webp);
+  box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
 }
 .link-container {
   margin-top: 10dvh;
@@ -65,27 +70,17 @@ header > ul > li > a {
   padding: 50px;
   width: 50vw;
   height: 50dvh;
-  background-color: rgb(0, 0, 0);
-  z-index: 10;
-}
-.link-container h2 {
-  cursor: default;
-}
-.background-white {
-  position: absolute;
-  width: 60vw;
-  height: 65dvh;
-  background-color: rgba(255, 255, 255, 0.527);
-  top: 10px;
-  left: 0;
-  z-index: -10;
+  background-color: var(--background-color);
+  box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  z-index: 1;
 }
 .link-container ul {
-  height: 80%;
-  overflow: scroll;
-}
-.link-container ul::-webkit-scrollbar {
-  display: none;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: gray transparent;
 }
 .link-container li ::before {
   filter: grayscale();
@@ -113,9 +108,18 @@ header > ul > li > a {
   position: relative;
   width: 30vw;
   height: 70dvh;
-  background-color: black;
+  background-color: var(--background-color);
+  box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   color: var(--font-main);
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: gray transparent;
+  z-index: 1;
+  background-image: url(/assets/Logo_of_Twitter.svg.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
 }
 .twitter-tittle {
   height: 10%;
@@ -123,9 +127,6 @@ header > ul > li > a {
   display: flex;
   justify-content: flex-end;
   cursor: default;
-}
-.twitter-tittle img {
-  height: 100%;
 }
 
 .tweets p {
