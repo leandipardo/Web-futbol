@@ -1,6 +1,8 @@
+/* GLOBALES */
 :root {
   --font-main: rgb(211, 211, 211);
   --background-color: rgb(22, 22, 22);
+  --scroll-bar: gray transparent;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
@@ -15,6 +17,8 @@ body {
   overflow-x: hidden;
   background-color: black;
 }
+
+/* HEADER */
 header {
   position: absolute;
   height: 10dvh;
@@ -53,6 +57,8 @@ header > ul > li > a {
   font-weight: bold;
   color: var(--font-main);
 }
+
+/* Contenedor de seccion twitter y seccion links */
 .links-twitter-container {
   padding-top: 10dvh;
   width: 100vw;
@@ -80,28 +86,25 @@ header > ul > li > a {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: gray transparent;
+  scrollbar-color: var(--scroll-bar);
+}
+.link-container li {
+  transition: 0.15s ease-in;
+  background-color: rgba(128, 128, 128, 0.123);
+  margin-top: 1em;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 .link-container li ::before {
   filter: grayscale();
   content: "⚽";
 }
-.link-container li {
-  transition: 0.25s ease-in;
-}
 .link-container ul li:hover {
-  transform: translateX(5%);
+  transform: translateX(2%);
 }
 .link-container a {
   text-decoration: none;
-  font-size: 2em;
   color: var(--font-main);
-}
-.link-container li {
-  background-color: rgba(128, 128, 128, 0.123);
-  margin-top: 1em;
-  border-radius: 10px;
-  padding-left: 10px;
 }
 .twitter {
   margin-top: 10dvh;
@@ -115,20 +118,12 @@ header > ul > li > a {
   color: var(--font-main);
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: gray transparent;
+  scrollbar-color: var(--scroll-bar);
   z-index: 1;
   background-image: url(/assets/Logo_of_Twitter.svg.png);
   background-size: 40%;
   background-repeat: no-repeat;
 }
-.twitter-tittle {
-  height: 10%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  cursor: default;
-}
-
 .tweets p {
   color: white;
   margin: 10%;
