@@ -65,46 +65,127 @@ header > ul > li > a {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  align-items: center;
   background-image: url(/assets/fondo.webp);
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
 }
 .link-container {
-  margin-top: 10dvh;
   position: relative;
-  padding: 50px;
-  width: 50vw;
-  height: 50dvh;
-  background-color: var(--background-color);
+  width: clamp(600px, 700px, 900px);
+  height: clamp(50dvh, 55dvh, 60dvh);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  perspective: 500px;
+}
+.link-container p {
+  background-color: rgb(139, 154, 71);
+  outline: 5px solid rgb(0, 0, 0);
+  border-radius: 0 0 5px 0;
+  font-size: 2em;
+  padding: 0 0.2em;
+  margin-top: 5%;
+  width: fit-content;
+  mix-blend-mode: screen;
+}
+.link-container h3 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+.izq-carousel,
+.center-carousel,
+.der-carousel {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
+  transition: 1s ease;
+}
+.izq-carousel,
+.der-carousel {
+  transform-style: preserve-3d;
+  background-color: gray;
+  backdrop-filter: brightness(0.5);
+  height: 80%;
+  width: 25%;
+  z-index: 0;
+}
+.izq-carousel {
+  background-image: url("/assets/imagen messi.jpeg");
+  transform: rotateX(0deg) translateX(10%) rotateY(10deg);
+}
+.der-carousel {
+  transform: rotateX(0deg) translateX(-10%) rotateY(350deg);
+  background-image: url("/assets/imagen\ este\ otro.jpg");
+}
+.der-carousel p {
+  align-self: flex-end;
+  border-radius: 0 0 0 5px;
+}
+.center-carousel {
+  background-image: url("/assets/imagen cr7.jpg");
   z-index: 1;
+  width: 50%;
+
+  background-color: black;
 }
-.link-container ul {
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-color: var(--scroll-bar);
+.center-carousel img {
+  position: absolute;
+  z-index: 5;
+  width: 50%;
+  max-height: 33%;
+  filter: invert();
+  opacity: 0.5;
+  left: 25%;
+  bottom: 50%;
+  transition: scale 2.5s ease, opacity 0.15s linear;
+  cursor: pointer;
 }
-.link-container li {
-  transition: 0.15s ease-in;
-  background-color: rgba(128, 128, 128, 0.123);
-  margin-top: 1em;
-  border-radius: 10px;
-  padding-left: 10px;
+.der-carousel img,
+.izq-carousel img {
+  width: 100%;
+  margin-top: 50%;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 5;
+  filter: invert();
+  transition: scale 2.5s ease, opacity 0.15s linear;
+  cursor: pointer;
 }
-.link-container li ::before {
-  filter: grayscale();
-  content: "⚽";
+.der-carousel img {
+  transform: rotateZ(180deg);
+  cursor: pointer;
 }
-.link-container ul li:hover {
-  transform: translateX(2%);
+.center-carousel img:hover,
+.der-carousel img:hover,
+.izq-carousel img:hover {
+  scale: 1.1;
+  opacity: 1;
 }
-.link-container a {
-  text-decoration: none;
-  color: var(--font-main);
+
+.izq-carousel:hover,
+.der-carousel:hover,
+.center-carousel:hover {
+  scale: 1.025;
+}
+.izq-carousel:hover {
+  transform: translateX(0%) rotateY(5deg);
+  background-position: 48%;
+}
+.der-carousel:hover {
+  transform: translateX(0%) rotateY(355deg);
+  background-position: 100%;
 }
 .twitter {
   margin-top: 10dvh;
