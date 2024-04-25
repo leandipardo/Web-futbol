@@ -110,7 +110,7 @@ header > ul > li > a {
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
-  transition: 1s ease;
+  transition: transform 0.5s ease, font-size 0.5s ease;
 }
 .izq-carousel,
 .der-carousel {
@@ -122,22 +122,21 @@ header > ul > li > a {
   z-index: 0;
 }
 .izq-carousel {
-  background-image: url("/assets/imagen messi.jpeg");
+  background-image: url("");
   transform: rotateX(0deg) translateX(10%) rotateY(10deg);
 }
 .der-carousel {
   transform: rotateX(0deg) translateX(-10%) rotateY(350deg);
-  background-image: url("/assets/imagen\ este\ otro.jpg");
+  background-image: url("");
 }
 .der-carousel p {
   align-self: flex-end;
   border-radius: 0 0 0 5px;
 }
 .center-carousel {
-  background-image: url("/assets/imagen cr7.jpg");
+  background-image: url("");
   z-index: 1;
   width: 50%;
-
   background-color: black;
 }
 .center-carousel img {
@@ -163,9 +162,9 @@ header > ul > li > a {
   transition: scale 2.5s ease, opacity 0.15s linear;
   cursor: pointer;
 }
-.der-carousel img {
-  transform: rotateZ(180deg);
+.izq-carousel img {
   cursor: pointer;
+  transform: rotateZ(180deg);
 }
 .center-carousel img:hover,
 .der-carousel img:hover,
@@ -173,7 +172,6 @@ header > ul > li > a {
   scale: 1.1;
   opacity: 1;
 }
-
 .izq-carousel:hover,
 .der-carousel:hover,
 .center-carousel:hover {
@@ -181,11 +179,9 @@ header > ul > li > a {
 }
 .izq-carousel:hover {
   transform: translateX(0%) rotateY(5deg);
-  background-position: 48%;
 }
 .der-carousel:hover {
   transform: translateX(0%) rotateY(355deg);
-  background-position: 100%;
 }
 .twitter {
   margin-top: 10dvh;
