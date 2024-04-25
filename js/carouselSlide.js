@@ -72,7 +72,6 @@ export default function carousel() {
       izq.card.style.filter = "blur(15px)brightness(.3)";
       center.card.style.filter = "blur(15px)brightness(.3)";
       der.card.style.filter = "blur(15px)brightness(.3)";
-
       setTimeout(() => {
         izq.hour.textContent = contenido[k].hour;
         izq.card.style.backgroundImage = contenido[k].img;
