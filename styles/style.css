@@ -110,7 +110,7 @@ header > ul > li > a {
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -moz-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
-  transition: transform 0.5s ease, font-size 0.5s ease;
+  transition: transform 0.5s ease, filter 0.2s ease-out;
 }
 .izq-carousel,
 .der-carousel {

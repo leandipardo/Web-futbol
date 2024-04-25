@@ -89,7 +89,7 @@ export default function carousel() {
         izq.card.style.filter = "blur(0px)brightness(1)";
         center.card.style.filter = "blur(0px)brightness(1)";
         der.card.style.filter = "blur(0px)brightness(1)";
-      }, 100);
+      }, 200);
     }
   });
 }
