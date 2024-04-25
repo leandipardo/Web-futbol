@@ -124,9 +124,15 @@ header > ul > li > a {
 .izq-carousel {
   background-image: url("");
   transform: rotateX(0deg) translateX(10%) rotateY(10deg);
+  box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
+  -webkit-box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
+  -moz-box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
 }
 .der-carousel {
   transform: rotateX(0deg) translateX(-10%) rotateY(350deg);
+  box-shadow: 200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
+  -webkit-box-shadow: 200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
+  -moz-box-shadow: 200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
   background-image: url("");
 }
 .der-carousel p {
