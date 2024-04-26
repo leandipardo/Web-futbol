@@ -3,8 +3,11 @@
   --font-main: rgb(211, 211, 211);
   --background-color: rgb(22, 22, 22);
   --scroll-bar: gray transparent;
+  --hour-background: rgb(139, 154, 71);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+  background-color: rgb(27, 27, 27);
+  scrollbar-color: var(--scroll-bar);
 }
 h1,
 h2,
@@ -15,7 +18,6 @@ h3 {
 }
 body {
   overflow-x: hidden;
-  background-color: black;
 }
 
 /* HEADER */
@@ -82,7 +84,7 @@ header > ul > li > a {
   perspective: 500px;
 }
 .link-container p {
-  background-color: rgb(139, 154, 71);
+  background-color: var(--hour-background);
   outline: 5px solid rgb(0, 0, 0);
   border-radius: 0 0 5px 0;
   font-size: 2em;
@@ -93,6 +95,8 @@ header > ul > li > a {
 }
 .link-container h3 {
   text-align: center;
+  font-size: 150%;
+  font-weight: 900;
   margin-bottom: 5%;
 }
 .izq-carousel,
@@ -104,7 +108,7 @@ header > ul > li > a {
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 20px;
   background-position: center;
   background-size: cover;
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
@@ -143,24 +147,27 @@ header > ul > li > a {
   background-image: url("");
   z-index: 1;
   width: 50%;
-  background-color: black;
 }
-.center-carousel img {
+.center-carousel a {
   position: absolute;
-  z-index: 5;
   width: 50%;
-  max-height: 33%;
-  filter: invert();
-  opacity: 0.5;
   left: 25%;
   bottom: 50%;
+  max-height: 33%;
+}
+.center-carousel img {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  filter: invert();
+  opacity: 0.5;
   transition: scale 2.5s ease, opacity 0.15s linear;
-  cursor: pointer;
 }
 .der-carousel img,
 .izq-carousel img {
+  position: relative;
   width: 100%;
-  margin-top: 50%;
+  bottom: 40%;
   opacity: 0.5;
   position: absolute;
   z-index: 5;
