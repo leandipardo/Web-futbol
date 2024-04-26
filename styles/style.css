@@ -37,6 +37,13 @@ header > div {
 }
 header > div > img {
   height: 100%;
+  animation: logo 1s ease-in-out 0s infinite alternate-reverse;
+  animation-play-state: running;
+}
+@keyframes logo {
+  to {
+    scale: 1.1;
+  }
 }
 header > ul {
   width: 50vw;
