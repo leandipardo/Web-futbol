@@ -25,25 +25,17 @@ header {
   position: absolute;
   height: 10dvh;
   width: 100vw;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgb(0, 0, 0) 21%,
-    rgb(0, 0, 0) 74%,
-    rgba(0, 0, 0, 0) 100%
-  );
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
 }
 header > div {
   width: 50vw;
   height: 100%;
-  font-size: 2.5em; /* Todo */
   display: flex;
   align-items: center;
-  text-align: center;
-  justify-content: center;
+}
+header > div > img {
+  height: 100%;
 }
 header > ul {
   width: 50vw;
@@ -108,7 +100,6 @@ header > ul > li > a {
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
-  border-radius: 20px;
   background-position: center;
   background-size: cover;
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
@@ -131,6 +122,7 @@ header > ul > li > a {
   box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
   -webkit-box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
   -moz-box-shadow: -200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
+  border-radius: 20px 0 0 20px;
 }
 .der-carousel {
   transform: rotateX(0deg) translateX(-10%) rotateY(350deg);
@@ -138,6 +130,7 @@ header > ul > li > a {
   -webkit-box-shadow: 200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
   -moz-box-shadow: 200px -22px 65px -120px rgba(0, 0, 0, 0.65) inset;
   background-image: url("");
+  border-radius: 0 20px 20px 0;
 }
 .der-carousel p {
   align-self: flex-end;
@@ -147,6 +140,7 @@ header > ul > li > a {
   background-image: url("");
   z-index: 1;
   width: 50%;
+  border-radius: 20px;
 }
 .center-carousel a {
   position: absolute;
@@ -198,8 +192,8 @@ header > ul > li > a {
 .twitter {
   margin-top: 10dvh;
   position: relative;
-  width: 30vw;
-  height: 70dvh;
+  width: clamp(100px, 500px, 500px);
+  height: clamp(50dvh, 55dvh, 60dvh);
   background-color: var(--background-color);
   box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
   -webkit-box-shadow: 1px -195px 101px -84px rgba(0, 0, 0, 1) inset;
