@@ -32,7 +32,7 @@ const izq = {
     {
       hour: "7:45",
       img: "url('/assets/imagen este otro.jpg')",
-      title: "Bayern munich vs aldosivi",
+      title: "Bayern munich vs Real Madrid",
       link: "https://lc.cx/mxJGbT",
     },
     {
@@ -65,38 +65,36 @@ export default function carousel() {
     else if (e.target === der.btn)movimiento("derecha");
   });
 }
-
 //Evalua si es izquierda o derecha lo mueve y aplica efectos visuales
-
 function movimiento(Direccion) {
-  if (Direccion === "derecha") {
+  if (Direccion === "izquierda") {
     i >= contenido.length - 1 ? (i = 0) : i++;
     j >= contenido.length - 1 ? (j = 0) : j++;
     k >= contenido.length - 1 ? (k = 0) : k++;
-  } else if (Direccion === "izquierda") {
+  } else if (Direccion === "derecha") {
     i > 0 ? i-- : (i = contenido.length - 1);
     j > 0 ? j-- : (j = contenido.length - 1);
     k > 0 ? k-- : (k = contenido.length - 1);
   }
-  izq.card.style.filter = "blur(15px)brightness(.3)";
-  center.card.style.filter = "blur(15px)brightness(.3)";
-  der.card.style.filter = "blur(15px)brightness(.3)";
+  izq.hour.textContent = contenido[k].hour;
+  izq.card.style.backgroundImage = contenido[k].img;
+  izq.title.textContent = contenido[k].title;
+
+  center.hour.textContent = contenido[j].hour;
+  center.card.style.backgroundImage = contenido[j].img;
+  center.btn.href = contenido[j].link;
+  center.title.textContent = contenido[j].title;
+
+  der.hour.textContent = contenido[i].hour;
+  der.card.style.backgroundImage = contenido[i].img;
+  der.title.textContent = contenido[i].title;
+
+  izq.card.classList.toggle(`animacion-${Direccion}`);
+  center.card.classList.toggle(`animacion-${Direccion}`);
+  der.card.classList.toggle(`animacion-${Direccion}`);
   setTimeout(() => {
-    izq.hour.textContent = contenido[k].hour;
-    izq.card.style.backgroundImage = contenido[k].img;
-    izq.title.textContent = contenido[k].title;
-
-    center.hour.textContent = contenido[j].hour;
-    center.card.style.backgroundImage = contenido[j].img;
-    center.btn.href = contenido[j].link;
-    center.title.textContent = contenido[j].title;
-
-    der.hour.textContent = contenido[i].hour;
-    der.card.style.backgroundImage = contenido[i].img;
-    der.title.textContent = contenido[i].title;
-
-    izq.card.style.filter = "blur(0px)brightness(1)";
-    center.card.style.filter = "blur(0px)brightness(1)";
-    der.card.style.filter = "blur(0px)brightness(1)";
-  }, 200);
+    izq.card.classList.toggle(`animacion-${Direccion}`);
+    center.card.classList.toggle(`animacion-${Direccion}`);
+    der.card.classList.toggle(`animacion-${Direccion}`);
+  }, 500);
 }

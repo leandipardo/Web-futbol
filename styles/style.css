@@ -197,6 +197,35 @@ header > ul > li > a {
 .der-carousel:hover {
   transform: translateX(0%) rotateY(355deg) scale(1.025);
 }
+
+.animacion-derecha {
+  animation: moverDer 0.5s ease-out 0s 1 backwards;
+}
+.animacion-izquierda {
+  animation: moverIzq 0.5s ease-out 0s 1 reverse;
+}
+
+@keyframes moverDer {
+  from {
+    background-position: 0 10%;
+    filter: brightness(7);
+  }
+  to {
+    background-size: cover;
+    filter: brightness(1);
+  }
+}
+@keyframes moverIzq {
+  from {
+    background-position: 0 -10%;
+    filter: brightness(7);
+  }
+  to {
+    background-size: cover;
+    filter: brightness(1);
+  }
+}
+
 .twitter {
   margin-top: 10dvh;
   position: relative;
