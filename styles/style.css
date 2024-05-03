@@ -199,10 +199,10 @@ header > ul > li > a {
 }
 
 .animacion-derecha {
-  animation: moverDer 0.5s ease-out 0s 1 backwards;
+  animation: moverDer 0.5s ease-out 0s 1 forwards;
 }
 .animacion-izquierda {
-  animation: moverIzq 0.5s ease-out 0s 1 reverse;
+  animation: moverIzq 0.5s ease-in 0s 1 reverse;
 }
 
 @keyframes moverDer {
@@ -218,11 +218,10 @@ header > ul > li > a {
 @keyframes moverIzq {
   from {
     background-position: 0 -10%;
-    filter: brightness(7);
   }
   to {
+    filter: brightness(7);
     background-size: cover;
-    filter: brightness(1);
   }
 }
 
