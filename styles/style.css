@@ -22,15 +22,16 @@ body {
 
 /* HEADER */
 header {
-  position: absolute;
+  position: fixed;
   height: 10dvh;
   width: 100vw;
   display: flex;
   flex-flow: row nowrap;
   font-size: large;
+  z-index: 10;
 }
 header > div {
-  width: 50vw;
+  width: fit-content;
   height: 100%;
   display: flex;
   align-items: center;
