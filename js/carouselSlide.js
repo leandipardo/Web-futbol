@@ -3,18 +3,21 @@ const izq = {
     btn: document.querySelector(".izq-carousel img"),
     hour: document.querySelector(".izq-carousel p"),
     title: document.querySelector(".izq-carousel h3"),
+    light: document.querySelector(".light1"),
   },
   center = {
     card: document.querySelector(".center-carousel"),
     btn: document.querySelector(".center-carousel a"),
     hour: document.querySelector(".center-carousel p"),
     title: document.querySelector(".center-carousel h3"),
+    light: document.querySelector(".light2"),
   },
   der = {
     card: document.querySelector(".der-carousel"),
     btn: document.querySelector(".der-carousel img"),
     hour: document.querySelector(".der-carousel p"),
     title: document.querySelector(".der-carousel h3"),
+    light: document.querySelector(".light3"),
   },
   contenido = [
     {
@@ -88,13 +91,26 @@ function movimiento(Direccion) {
   der.hour.textContent = contenido[i].hour;
   der.card.style.backgroundImage = contenido[i].img;
   der.title.textContent = contenido[i].title;
-
-  izq.card.classList.toggle(`animacion-${Direccion}`);
-  center.card.classList.toggle(`animacion-${Direccion}`);
-  der.card.classList.toggle(`animacion-${Direccion}`);
+  animacion(Direccion);
+}
+function animacion(dir) {
+  center.light.classList.toggle(`light-animation-${dir}`);
   setTimeout(() => {
-    izq.card.classList.toggle(`animacion-${Direccion}`);
-    center.card.classList.toggle(`animacion-${Direccion}`);
-    der.card.classList.toggle(`animacion-${Direccion}`);
+    izq.light.classList.toggle(`light-animation-${dir}`);
+    der.light.classList.toggle(`light-animation-${dir}`);
+  }, 150);
+
+  izq.card.classList.toggle(`animacion-${dir}`);
+  center.card.classList.toggle(`animacion-${dir}`);
+  der.card.classList.toggle(`animacion-${dir}`);
+  setTimeout(() => {
+    izq.card.classList.toggle(`animacion-${dir}`);
+    center.card.classList.toggle(`animacion-${dir}`);
+    der.card.classList.toggle(`animacion-${dir}`);
+    center.light.classList.toggle(`light-animation-${dir}`);
+    setTimeout(() => {
+      izq.light.classList.toggle(`light-animation-${dir}`);
+      der.light.classList.toggle(`light-animation-${dir}`);
+    }, 150);
   }, 500);
 }

@@ -85,13 +85,12 @@ header > ul > li > a {
 }
 .link-container p {
   background-color: var(--hour-background);
-  outline: 5px solid rgb(0, 0, 0);
-  border-radius: 0 0 5px 0;
   font-size: 2em;
-  padding: 0 0.2em;
+  padding: 0.01em 0.5em;
   margin-top: 5%;
   width: fit-content;
-  mix-blend-mode: screen;
+  background-color: var(--font-main);
+  mix-blend-mode: lighten;
 }
 .link-container h3 {
   text-align: center;
@@ -142,7 +141,6 @@ header > ul > li > a {
 }
 .der-carousel p {
   align-self: flex-end;
-  border-radius: 0 0 0 5px;
 }
 .center-carousel {
   background-image: url("");
@@ -190,6 +188,8 @@ header > ul > li > a {
 
 .center-carousel:hover {
   transform: scale(1.025);
+  animation: inhover 3s ease 0s infinite alternate;
+  animation-play-state: running;
 }
 .izq-carousel:hover {
   transform: translateX(0%) rotateY(5deg) scale(1.025);
@@ -197,34 +197,58 @@ header > ul > li > a {
 .der-carousel:hover {
   transform: translateX(0%) rotateY(355deg) scale(1.025);
 }
-
 .animacion-derecha {
   animation: moverDer 0.5s ease-out 0s 1 forwards;
 }
 .animacion-izquierda {
   animation: moverIzq 0.5s ease-in 0s 1 reverse;
 }
-
 @keyframes moverDer {
   from {
     background-position: 0 10%;
-    filter: brightness(7);
+    filter: brightness(3);
   }
   to {
+    filter: blur(0);
     background-size: cover;
     filter: brightness(1);
   }
 }
 @keyframes moverIzq {
   from {
-    background-position: 0 -10%;
+    filter: brightness(1);
   }
   to {
-    filter: brightness(7);
+    background-position: 0 10%;
+    filter: brightness(3);
     background-size: cover;
   }
 }
-
+.light1,
+.light2,
+.light3 {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background-color: rgba(255, 255, 255, 0.221);
+  filter: blur(10px);
+  left: 100%;
+  top: 100%;
+  transform: rotateZ(45deg);
+}
+.light-animation-derecha {
+  animation: light 0.5s ease-in-out 0s 1;
+}
+.light-animation-izquierda {
+  animation: light 0.5s ease-in-out 0s 1 reverse;
+}
+@keyframes light {
+  to {
+    width: 20%;
+    top: -100%;
+    left: 0;
+  }
+}
 .twitter {
   margin-top: 10dvh;
   position: relative;
